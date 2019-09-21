@@ -1,0 +1,26 @@
+<p>list works!</p>
+
+<h1>Breweries</h1>
+
+<div class="play-container">
+    <p>
+        <input type="text" [(ngModel)]="name" >
+        <br>
+        <strong>You said: </strong> {{ name }}
+    </p>
+
+    <div class="search_button" (click)="countClick()">
+        <p>Search <span ></span>{{clickCounter}} </p>
+    </div>
+
+ </div>
+
+<ul *ngIf="brews">
+    <li *ngFor="let brew of brews" >
+        <p class="name">{{ brew.name }}</p>
+        <p class="symbol">{{ brew.symbol }}</p>
+        <p class="price">{{ brew.price }}</p>
+        <p class="day_change">{{ brew.day_change }}</p>
+        <a href="{{ brew.website_url }}" class="site">site</a>
+    </li>
+</ul>
